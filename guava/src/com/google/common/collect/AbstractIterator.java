@@ -68,16 +68,28 @@ public abstract class AbstractIterator<T> extends UnmodifiableIterator<T> {
   protected AbstractIterator() {}
 
   private enum State {
-    /** We have computed the next element and haven't returned it yet. */
+    /**
+     * We have computed the next element and haven't returned it yet.
+     * 已经计算了下一个元素,但还没有返回它
+     */
     READY,
 
-    /** We haven't yet computed or have already returned the element. */
+    /**
+     * We haven't yet computed or have already returned the element.
+     * 还没有计算或者已经返回了元素(还没做或者已经做完)
+     */
     NOT_READY,
 
-    /** We have reached the end of the data and are finished. */
+    /**
+     * We have reached the end of the data and are finished.
+     * 到了数据的结尾并完成了
+     */
     DONE,
 
-    /** We've suffered an exception and are kaput. */
+    /**
+     * We've suffered an exception and are kaput.
+     * 遇到异常
+     */
     FAILED,
   }
 
